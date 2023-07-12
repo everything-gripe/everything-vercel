@@ -1,0 +1,22 @@
+{
+  "name": "everything-vercel",
+  "version": "0.0.1",
+  "description": "Connect with services seamlessly through the Everything middleware. Simplify integration and streamline API access with Everything Vercel.",
+  "scripts": {
+    "start:dev": "vercel dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "everything-sdk": "^0.7.4",
+    "h3": "^1.7.1",
+    "kbin-for-everything": "^0.0.14",
+    "lemmy-for-everything": "^0.0.31"
+  },
+  "devDependencies": {
+    "@vercel/node": "^2.15.3",
+    "dotenv": "^16.3.1"
+  }
+}
