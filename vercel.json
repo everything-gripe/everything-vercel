@@ -10,8 +10,14 @@
       }
     ]
   }, {
-    "source": "/r/:subreddit/comments/:path*",
-    "destination": "/comments/:path*?subreddit=:subreddit"
+    "source": "/api/subreddit_autocomplete:v2",
+    "destination": "/api/autocomplete?v2=:v2"
+  }, {
+    "source": "/r/:group/:path*",
+    "destination": "/:path*?group=:group"
+  }, {
+    "source": "/comments/:id/:slug",
+    "destination": "/comments/:id"
   }, {
     "source": "/u/:path*",
     "destination": "/user/:path*"

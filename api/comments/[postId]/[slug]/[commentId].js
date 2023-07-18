@@ -3,7 +3,7 @@
 export default handler(async function (request, response, service) {
     const limit = Number(request.query.limit ?? 25)
     const depth = request.query.depth
-    const subreddit = request.query.subreddit
+    const group = request.query.group
     const sort = request.query.sort
 
     //TODO: Add context param
@@ -15,6 +15,6 @@ export default handler(async function (request, response, service) {
         limit,
         depth,
         sort,
-        subreddit
+        group
     })
 })

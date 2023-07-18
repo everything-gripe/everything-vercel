@@ -10,10 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "everything-sdk": "^0.7.4",
+    "everything-sdk": "^0.7.10",
     "h3": "^1.7.1",
     "kbin-for-everything": "^0.0.14",
-    "lemmy-for-everything": "^0.0.31"
+    "lemmy-for-everything": "^0.0.37"
   },
   "devDependencies": {
     "@vercel/node": "^2.15.3",

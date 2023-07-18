@@ -2,10 +2,11 @@
 
 [![License](https://img.shields.io/badge/license-ISC-blue.svg)](LICENSE.md)
 
-Everything Vercel is a generic implementation of the Everything API guidelines through the [IService](https://github.com/everything-gripe/everything-sdk/blob/master/service.ts) interface defined in the [Everything SDK](https://github.com/everything-gripe/everything-sdk). It allows you to connect to services through the Everything middleware, providing a unified interface for making requests.
+Everything Vercel is a generic implementation of the Everything API guidelines through the [IService](https://github.com/everything-gripe/everything-sdk/blob/master/service.ts) interface defined in the [Everything SDK](https://github.com/everything-gripe/everything-sdk), for hosting with Vercel. It allows you to connect to services through the Everything middleware, providing a unified interface for making requests.
 
 ## Features
 
+- Easy hosting on Vercel
 - Seamless integration with services
 - Consolidated API access through the Everything middleware
 - Streamlined request handling
