@@ -1,5 +1,5 @@
 ﻿import {IService, Unimplemented} from "everything-sdk";
-import {createEvent, getRequestURL, H3Event} from "h3"
+import {createEvent, getHeader, getRequestURL, H3Event} from "h3"
 import LemmyService from "lemmy-for-everything"
 import KbinService from "kbin-for-everything"
 
@@ -37,7 +37,22 @@ async function getService(event) {
     const hostParts = requestUrl.hostname.split('.')
     const serviceName = hostParts[hostParts.length - 3] || requestUrl.searchParams.get('everything-service')
 
-    return new services[serviceName]()
+    const ip = event.node.req.connection.remoteAddress
+    const userAgent = getHeader(event, 'user-agent')
+    let forwardedFor = getHeader(event, 'x-forwarded-for')
+    forwardedFor = forwardedFor && ip ? `${forwardedFor}, ${ip}` : ip;
+    let realIp = getHeader(event, 'x-real-ip');
+    realIp = realIp || ip;
+
+    const serviceOptions = {
+        headers: {
+            "user-agent": userAgent,
+            "x-forwarded-for": forwardedFor,
+            "x-real-ip": realIp
+        }
+    }
+
+    return new services[serviceName]().init(serviceOptions)
     // const imported = await import(`${serviceName}-for-everything`)
     // return new (imported.default?.default || imported.default)()
 }

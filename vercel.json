@@ -10,8 +10,26 @@
       }
     ]
   }, {
+    "source": "/:path*.json",
+    "destination": "/:path*"
+  }, {
+    "source": "/:path*/.json",
+    "destination": "/:path*"
+  }, {
     "source": "/api/subreddit_autocomplete:v2",
     "destination": "/api/autocomplete?v2=:v2"
+  }, {
+    "source": "/subreddits/search",
+    "destination": "/search?type=sr"
+  }, {
+    "source": "/users/search",
+    "destination": "/search?type=user"
+  }, {
+    "source": "/api/search_reddit_names",
+    "destination": "/search?type=sr"
+  }, {
+    "source": "/api/search_subreddits",
+    "destination": "/search?type=sr"
   }, {
     "source": "/r/:group/:path*",
     "destination": "/:path*?group=:group"
@@ -21,12 +39,6 @@
   }, {
     "source": "/u/:path*",
     "destination": "/user/:path*"
-  }, {
-    "source": "/:path*.json",
-    "destination": "/:path*"
-  }, {
-    "source": "/:path*/.json",
-    "destination": "/:path*"
   }, {
     "source": "/:path*",
     "destination": "/api/:path*"
